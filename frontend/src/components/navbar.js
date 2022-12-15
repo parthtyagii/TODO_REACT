@@ -8,7 +8,6 @@ export default function Navbar() {
                 <div className="title">
                     TODO
                 </div>
-                <hr />
             </nav>
         </>
     );
