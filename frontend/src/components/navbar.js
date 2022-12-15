@@ -3,10 +3,13 @@ import './navbar.css'
 
 export default function Navbar() {
     return (
-        <nav>
-            <div className="title">
-                TODO
-            </div>
-        </nav>
+        <>
+            <nav>
+                <div className="title">
+                    TODO
+                </div>
+                <hr />
+            </nav>
+        </>
     );
 }
