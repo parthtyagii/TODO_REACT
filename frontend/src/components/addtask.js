@@ -1,23 +1,30 @@
 import React from 'react'
 import { useState } from 'react';
 import './addtask.css'
+import uuid from 'react-uuid';
 
-export default function Addtask({ handler, tasks }) {
+export default function Addtask({ handler, tasks,setTasks }) {
     const [value, setValue] = useState('');
     const changeHandler = (e) => {
         setValue(e.target.value);
     }
-    const addHandler = (e) => {
-        const newData = [...tasks.tasks, value];
-        tasks.setTasks(newData);
-        setValue('');
+    const addHandler = () => {
+        if (value) {
+            const newTask =  { id: uuid(), task: value, done: false };
+            console.log(newTask)
+            const newData = [...tasks, newTask];
+            setTasks(newData);
+            setValue('');
+        }
     }
     return (
         <div className='middlePart'>
-            <h4>Add Task</h4>
-            <input type="text" value={value} onChange={changeHandler} className='form-control' />
-            <button className='btn btn-success middleBtn' onClick={addHandler}>Add Task</button>
-            <button className='btn btn-danger middleBtn' onClick={handler} >Cancel</button>
+            <div className="header">
+                <h4>Add Task</h4>
+                <button className='btn btn-light' onClick={handler}>&#10060;</button>
+            </div>
+            <textarea name="textarea" value={value} onChange={changeHandler} className='form-control'></textarea>
+            <button className='btn btn-success' onClick={addHandler}>Add Task</button>
         </div>
     );
 }

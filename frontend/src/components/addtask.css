@@ -12,7 +12,32 @@
     align-items: start;
 }
 
-.middleBtn{
+.middlePart textarea{
+    width: 100%;
+    height: 80px;
+    font-size: large;
+}
+
+.header h4{
+    display: inline-block;
+    margin:0;
+}
+
+.header{
+    width: 100%;
+    padding:10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-light{
+    height: 40px;
+}
+
+.btn-success{
     width: 100%;
     margin-top: 10px;
 }
